@@ -42,7 +42,7 @@ quartil = 90 Desvio padrão = 4,46
 hist(x)
 ```
 
-![](redme_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](unnamed-chunk-2-1.png)<!-- -->
 
 ``` r
 hist(x, ylab = "Frequência Absoluta", xlab = "BAT/min", col = "blue",bolder = FALSE, main = "Batimentos Cardíacos")
