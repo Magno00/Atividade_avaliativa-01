@@ -57,7 +57,7 @@ hist(x, ylab = "Frequência Absoluta", xlab = "BAT/min", col = "blue",bolder = F
 
     ## Warning in axis(2, ...): "bolder" não é um parâmetro gráfico
 
-![](redme_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+![](unnamed-chunk-2-2.png)<!-- -->
 
 **Questão 04** No repositório de dados da disciplina no GitHub,
 dados\_csv, analise o conjunto de dados frango\_dieta.csv.
@@ -87,7 +87,7 @@ main = 'Positive Skewed'
 lines(density(x, bw = 1), col = 'red', lwd = 3)
 ```
 
-![](redme_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> Eu usaria a
+![](unnamed-chunk-3-1.png)<!-- --> Eu usaria a
 média pois, a média se baseia em todos os números da curva, enquanto a
 mediana se baseia apenas no central e nesse gráfico há uma drástica
 subida e decida no início, então a médiana não serviria aqui.
