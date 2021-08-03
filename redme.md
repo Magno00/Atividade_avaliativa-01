@@ -36,7 +36,7 @@ x<-c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80,
 **b)** Média = 79,85 Mediana = 79,5 Primeiro quartil = 70 Terceiro
 quartil = 90 Desvio padrão = 4,46
 
-**c)**
+**c)** Não, ambos os valores da media e mediana são proximos.
 
 ``` r
 hist(x)
@@ -66,8 +66,15 @@ dados\_csv, analise o conjunto de dados frango\_dieta.csv.
 apresentado por 10.
 
 **b)**
+```{r}
+mean(frango_dieta$peso)
+```
 
 **c)**
+
+```{r}
+sd(frango_dieta$peso)
+```
 
 **d)** Tempo, Peso, Frango, Dieta = Quantitativo Discreto
 
@@ -100,6 +107,47 @@ subida e decida no início, então a médiana não serviria aqui.
 tabela enquanto a do bruto apresenta todas as linhas e todas as colunas.
 
 **c)**
+
+```{r}
+dados_co2 %>%                
+  pivot_longer(
+    1:13,                
+    names_to = "ano",    
+    values_to = "co2" 
+  )
+
+```
+
+**d)**
+
+```{r}
+dados_co2_tidy <- dados_co2 %>%  
+  pivot_longer(
+    !ano,
+    names_to = "mes",
+    values_to = "ppm"
+  )
+```
+
+**e)**
+
+```{r}
+co2_tidy <-  read_csv(dados_co2_tidy.csv")
+View(co2_tidy)
+
+co2_tidy %>% glimpse()
+
+```
+
+```{r}
+#-------------------------------------------
+co2_tidy %>% # conjunto de dados
+group_by(ano) %>% # agrupa por ano
+summarise(media = round(mean(ppm), 2)) %>% # calcula a média da variavel ppm em cada grupo
+ggplot(aes(ano, media, group = 1)) + # cria o gráfico
+geom_line(color = "blue", size = 1)
+#-------------------------------------------
+```
 
 **Questão 07** Considere a Tabela 1:
 
